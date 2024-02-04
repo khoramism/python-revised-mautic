@@ -237,3 +237,16 @@ class Contacts(API):
             )
         )
         return self.process_response(response)
+    
+    def create_contact(self, contact):
+        """
+        Create a new contact.
+
+        :param contact: a dictionary, where  dictionary contains contact fields
+        :return: list of responses
+        """
+        responses = []
+        response = self._client.session.post(
+            '{url}/new'.format(url=self.endpoint_url), data=json.dumps(contact)
+        )
+        return self.process_response(response)
