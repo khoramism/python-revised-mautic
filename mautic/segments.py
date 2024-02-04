@@ -41,4 +41,4 @@ class Segments(API):
                 contact_id=contact_id
             )
         )
-        return self.process_response(response)%  
+        return self.process_response(response)
