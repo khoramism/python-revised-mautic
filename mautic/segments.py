@@ -15,12 +15,30 @@ class Segments(API):
         :param contact_id: int Contact ID
         :return: dict|str
         """
-
+        #/segments/SEGMENT_ID/contact/CONTACT_ID/add
         response = self._client.session.post(
-            '{url}/{segment_id}/contact/add/{contact_id}'.format(
+            '{url}/{segment_id}/contact/{contact_id}/add'.format(
                 url=self.endpoint_url,
                 segment_id=segment_id,
                 contact_id=contact_id
             )
         )
         return self.process_response(response)
+    
+    def remove_contact(self, segment_id, contact_id):
+        """
+        Remove a contact from a segment
+
+        :param segment_id: int Segment ID
+        :param contact_id: int Contact ID
+        :return: dict|str
+        """
+        #/segments/SEGMENT_ID/contact/CONTACT_ID/remove
+        response = self._client.session.post(
+            '{url}/{segment_id}/contact/{contact_id}/remove'.format(
+                url=self.endpoint_url,
+                segment_id=segment_id,
+                contact_id=contact_id
+            )
+        )
+        return self.process_response(response)%  
