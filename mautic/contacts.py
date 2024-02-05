@@ -2,7 +2,7 @@
 from __future__ import unicode_literals, absolute_import
 
 from .api import API
-
+import json
 
 class Contacts(API):
     # Contact unsubscribed themselves.
