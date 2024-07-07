@@ -30,8 +30,8 @@ class Emails(API):
         :return: dict|str
         """
         response = self._client.session.post(
-            '{url}/{id}/send/contact/{contact_id}'.format(
-                url=self.endpoint_url, id=obj_id, contact_id=contact_id
+            '{url}/{email_id}/contact/{contact_id}/send'.format(
+                url=self.endpoint_url, email_id=obj_id, contact_id=contact_id
             )
         )
         return self.process_response(response)
