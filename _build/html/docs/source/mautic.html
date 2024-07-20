@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mautic package &#8212; Python Mautic Library  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mautic-package">
+<h1>mautic package<a class="headerlink" href="#mautic-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-mautic.api">
+<span id="mautic-api-module"></span><h2>mautic.api module<a class="headerlink" href="#module-mautic.api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.api.API">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.api.</span></span><span class="sig-name descname"><span class="pre">API</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.API" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.api.API.action_not_supported">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">action_not_supported</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.API.action_not_supported" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a not supported error
+:param action: str
+:return: dict</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.api.API.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.API.create" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new item (if supported)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameters</strong> – dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.api.API.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.API.delete" title="Link to this definition">¶</a></dt>
+<dd><p>Delete an item</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – int</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.api.API.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_if_not_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.API.edit" title="Link to this definition">¶</a></dt>
+<dd><p>Edit an item with option to create if it doesn’t exist</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>create_if_not_exists</strong> – bool</p></li>
+<li><p><strong>parameters</strong> – dict</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.api.API.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.API.get" title="Link to this definition">¶</a></dt>
+<dd><p>Get a single item</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – int</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.api.API.get_list">
+<span class="sig-name descname"><span class="pre">get_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">published_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.API.get_list" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of items</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search</strong> – str</p></li>
+<li><p><strong>start</strong> – int</p></li>
+<li><p><strong>limit</strong> – int</p></li>
+<li><p><strong>order_by</strong> – str</p></li>
+<li><p><strong>order_by_dir</strong> – str</p></li>
+<li><p><strong>published_only</strong> – bool</p></li>
+<li><p><strong>minimal</strong> – bool</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.api.API.get_published_list">
+<span class="sig-name descname"><span class="pre">get_published_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASC'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.API.get_published_list" title="Link to this definition">¶</a></dt>
+<dd><p>Proxy function to get_list with published_only set to True
+:param search: str
+:param start: int
+:param limit: int
+:param order_by: str
+:param order_by_dir: str
+:return: dict|str</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.api.API.process_response">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.API.process_response" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.api.MauticBasicAuthClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.api.</span></span><span class="sig-name descname"><span class="pre">MauticBasicAuthClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.MauticBasicAuthClient" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.api.MauticOauth2Client">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.api.</span></span><span class="sig-name descname"><span class="pre">MauticOauth2Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_secret</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.api.MauticOauth2Client" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.assets">
+<span id="mautic-assets-module"></span><h2>mautic.assets module<a class="headerlink" href="#module-mautic.assets" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.assets.Assets">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.assets.</span></span><span class="sig-name descname"><span class="pre">Assets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.assets.Assets" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.campaigns">
+<span id="mautic-campaigns-module"></span><h2>mautic.campaigns module<a class="headerlink" href="#module-mautic.campaigns" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.campaigns.Campaigns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.campaigns.</span></span><span class="sig-name descname"><span class="pre">Campaigns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.campaigns.Campaigns" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.campaigns.Campaigns.add_contact">
+<span class="sig-name descname"><span class="pre">add_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.campaigns.Campaigns.add_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Add a contact to the campaign</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int Campaign ID</p></li>
+<li><p><strong>contact_id</strong> – int Contact ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.campaigns.Campaigns.remove_contact">
+<span class="sig-name descname"><span class="pre">remove_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.campaigns.Campaigns.remove_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a contact from the campaign</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int Campaign ID</p></li>
+<li><p><strong>contact_id</strong> – int Contact ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.categories">
+<span id="mautic-categories-module"></span><h2>mautic.categories module<a class="headerlink" href="#module-mautic.categories" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.categories.Categories">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.categories.</span></span><span class="sig-name descname"><span class="pre">Categories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.categories.Categories" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.companies">
+<span id="mautic-companies-module"></span><h2>mautic.companies module<a class="headerlink" href="#module-mautic.companies" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.companies.Companies">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.companies.</span></span><span class="sig-name descname"><span class="pre">Companies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.companies.Companies" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.companies.Companies.add_contact">
+<span class="sig-name descname"><span class="pre">add_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.companies.Companies.add_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Add a contact to the company</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int Company ID</p></li>
+<li><p><strong>contact_id</strong> – int Contact ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.companies.Companies.remove_contact">
+<span class="sig-name descname"><span class="pre">remove_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.companies.Companies.remove_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a contact from the company</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int Campaign ID</p></li>
+<li><p><strong>contact_id</strong> – int Contact ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.company_fields">
+<span id="mautic-company-fields-module"></span><h2>mautic.company_fields module<a class="headerlink" href="#module-mautic.company_fields" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.company_fields.CompanyFields">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.company_fields.</span></span><span class="sig-name descname"><span class="pre">CompanyFields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.company_fields.CompanyFields" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.contact_fields">
+<span id="mautic-contact-fields-module"></span><h2>mautic.contact_fields module<a class="headerlink" href="#module-mautic.contact_fields" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.contact_fields.ContactFields">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.contact_fields.</span></span><span class="sig-name descname"><span class="pre">ContactFields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contact_fields.ContactFields" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.contacts">
+<span id="mautic-contacts-module"></span><h2>mautic.contacts module<a class="headerlink" href="#module-mautic.contacts" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.contacts.</span></span><span class="sig-name descname"><span class="pre">Contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.BOUNCED">
+<span class="sig-name descname"><span class="pre">BOUNCED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#mautic.contacts.Contacts.BOUNCED" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.MANUAL">
+<span class="sig-name descname"><span class="pre">MANUAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#mautic.contacts.Contacts.MANUAL" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.UNSUBSCRIBED">
+<span class="sig-name descname"><span class="pre">UNSUBSCRIBED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#mautic.contacts.Contacts.UNSUBSCRIBED" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.add_dnc">
+<span class="sig-name descname"><span class="pre">add_dnc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'email'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'via</span> <span class="pre">API'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.add_dnc" title="Link to this definition">¶</a></dt>
+<dd><p>Adds Do Not Contact</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>channel</strong> – str</p></li>
+<li><p><strong>reason</strong> – str</p></li>
+<li><p><strong>channel_id</strong> – int</p></li>
+<li><p><strong>comments</strong> – str</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.add_points">
+<span class="sig-name descname"><span class="pre">add_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.add_points" title="Link to this definition">¶</a></dt>
+<dd><p>Add the points to a contact</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>points</strong> – int</p></li>
+<li><p><strong>kwargs</strong> – dict ‘eventname’ and ‘actionname’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.create_contact">
+<span class="sig-name descname"><span class="pre">create_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contact</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.create_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new contact.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>contact</strong> – a dictionary, where  dictionary contains contact fields</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of responses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.get_contact_campaigns">
+<span class="sig-name descname"><span class="pre">get_contact_campaigns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.get_contact_campaigns" title="Link to this definition">¶</a></dt>
+<dd><p>Get a segment of campaigns the contact is in</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – int</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.get_contact_notes">
+<span class="sig-name descname"><span class="pre">get_contact_notes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASC'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.get_contact_notes" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of a contact’s notes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int Contact ID</p></li>
+<li><p><strong>search</strong> – str</p></li>
+<li><p><strong>start</strong> – int</p></li>
+<li><p><strong>limit</strong> – int</p></li>
+<li><p><strong>order_by</strong> – str</p></li>
+<li><p><strong>order_by_dir</strong> – str</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.get_contact_segments">
+<span class="sig-name descname"><span class="pre">get_contact_segments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.get_contact_segments" title="Link to this definition">¶</a></dt>
+<dd><p>Get a segment of smart segments the contact is in</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – int</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.get_events">
+<span class="sig-name descname"><span class="pre">get_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_events</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_events</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.get_events" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of a contact’s engagement events</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int Contact ID</p></li>
+<li><p><strong>search</strong> – str</p></li>
+<li><p><strong>include_events</strong> – list|tuple</p></li>
+<li><p><strong>exclude_events</strong> – list|tuple</p></li>
+<li><p><strong>order_by</strong> – str</p></li>
+<li><p><strong>order_by_dir</strong> – str</p></li>
+<li><p><strong>page</strong> – int</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.get_field_list">
+<span class="sig-name descname"><span class="pre">get_field_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.get_field_list" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of custom fields</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.get_owners">
+<span class="sig-name descname"><span class="pre">get_owners</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.get_owners" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of users available as contact owners</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.get_segments">
+<span class="sig-name descname"><span class="pre">get_segments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.get_segments" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of contact segments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.remove_dnc">
+<span class="sig-name descname"><span class="pre">remove_dnc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.remove_dnc" title="Link to this definition">¶</a></dt>
+<dd><p>Removes Do Not Contact</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>channel</strong> – str</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.contacts.Contacts.subtract_points">
+<span class="sig-name descname"><span class="pre">subtract_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.contacts.Contacts.subtract_points" title="Link to this definition">¶</a></dt>
+<dd><p>Subtract points from a contact</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>points</strong> – int</p></li>
+<li><p><strong>kwargs</strong> – dict ‘eventname’ and ‘actionname’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.data">
+<span id="mautic-data-module"></span><h2>mautic.data module<a class="headerlink" href="#module-mautic.data" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.data.Data">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.data.</span></span><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.data.Data" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.data.Data.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.data.Data.get" title="Link to this definition">¶</a></dt>
+<dd><p>Get a single item
+:param data_type: str
+:param options: dict
+:return: dict|str</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.dynamic_contents">
+<span id="mautic-dynamic-contents-module"></span><h2>mautic.dynamic_contents module<a class="headerlink" href="#module-mautic.dynamic_contents" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.dynamic_contents.DynamicContents">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.dynamic_contents.</span></span><span class="sig-name descname"><span class="pre">DynamicContents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.dynamic_contents.DynamicContents" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.emails">
+<span id="mautic-emails-module"></span><h2>mautic.emails module<a class="headerlink" href="#module-mautic.emails" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.emails.Emails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.emails.</span></span><span class="sig-name descname"><span class="pre">Emails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.emails.Emails" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.emails.Emails.create_email">
+<span class="sig-name descname"><span class="pre">create_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customHtml</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.emails.Emails.create_email" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new email
+# Check here for more info: <a class="reference external" href="https://developer.mautic.org/?json#create-email">https://developer.mautic.org/?json#create-email</a>
+:param name: string
+:param subject: string
+:param customHtml: string
+:param kwargs: other optional parameters for the email
+:return: dict|str</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.emails.Emails.get_email">
+<span class="sig-name descname"><span class="pre">get_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.emails.Emails.get_email" title="Link to this definition">¶</a></dt>
+<dd><p>Get an individual email by ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>email_id</strong> – int</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.emails.Emails.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.emails.Emails.send" title="Link to this definition">¶</a></dt>
+<dd><p>Send email to the assigned lists</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – int</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.emails.Emails.send_to_contact">
+<span class="sig-name descname"><span class="pre">send_to_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.emails.Emails.send_to_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Send email to a specific contact</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>contact_id</strong> – int</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.exceptions">
+<span id="mautic-exceptions-module"></span><h2>mautic.exceptions module<a class="headerlink" href="#module-mautic.exceptions" title="Link to this heading">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="mautic.exceptions.ActionNotSupportedException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.exceptions.</span></span><span class="sig-name descname"><span class="pre">ActionNotSupportedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.exceptions.ActionNotSupportedException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.exceptions.MauticException" title="mautic.exceptions.MauticException"><code class="xref py py-class docutils literal notranslate"><span class="pre">MauticException</span></code></a></p>
+<p>Exception representing an unsupported action</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mautic.exceptions.ActionNotSupportedException.default_message">
+<span class="sig-name descname"><span class="pre">default_message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Action</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">supported</span> <span class="pre">at</span> <span class="pre">this</span> <span class="pre">time.'</span></em><a class="headerlink" href="#mautic.exceptions.ActionNotSupportedException.default_message" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mautic.exceptions.ContextNotFoundException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.exceptions.</span></span><span class="sig-name descname"><span class="pre">ContextNotFoundException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.exceptions.ContextNotFoundException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.exceptions.MauticException" title="mautic.exceptions.MauticException"><code class="xref py py-class docutils literal notranslate"><span class="pre">MauticException</span></code></a></p>
+<p>Exception representing a requested API context which was not found</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mautic.exceptions.ContextNotFoundException.default_message">
+<span class="sig-name descname"><span class="pre">default_message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Context</span> <span class="pre">not</span> <span class="pre">found.'</span></em><a class="headerlink" href="#mautic.exceptions.ContextNotFoundException.default_message" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mautic.exceptions.IncorrectParametersReturnedException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.exceptions.</span></span><span class="sig-name descname"><span class="pre">IncorrectParametersReturnedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.exceptions.IncorrectParametersReturnedException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.exceptions.MauticException" title="mautic.exceptions.MauticException"><code class="xref py py-class docutils literal notranslate"><span class="pre">MauticException</span></code></a></p>
+<p>Exception representing an incorrect parameter set for an OAuth token request</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mautic.exceptions.IncorrectParametersReturnedException.default_message">
+<span class="sig-name descname"><span class="pre">default_message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Incorrect</span> <span class="pre">parameters</span> <span class="pre">returned.'</span></em><a class="headerlink" href="#mautic.exceptions.IncorrectParametersReturnedException.default_message" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mautic.exceptions.MauticException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.exceptions.</span></span><span class="sig-name descname"><span class="pre">MauticException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.exceptions.MauticException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class for Mautic exceptions.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mautic.exceptions.MauticException.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">500</span></em><a class="headerlink" href="#mautic.exceptions.MauticException.code" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mautic.exceptions.MauticException.default_message">
+<span class="sig-name descname"><span class="pre">default_message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Mautic</span> <span class="pre">error</span> <span class="pre">occurred.'</span></em><a class="headerlink" href="#mautic.exceptions.MauticException.default_message" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mautic.exceptions.UnexpectedResponseFormatException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.exceptions.</span></span><span class="sig-name descname"><span class="pre">UnexpectedResponseFormatException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.exceptions.UnexpectedResponseFormatException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.exceptions.MauticException" title="mautic.exceptions.MauticException"><code class="xref py py-class docutils literal notranslate"><span class="pre">MauticException</span></code></a></p>
+<p>Exception representing an unexpected HTTP response</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mautic.exceptions.UnexpectedResponseFormatException.default_message">
+<span class="sig-name descname"><span class="pre">default_message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'The</span> <span class="pre">response</span> <span class="pre">returned</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">an</span> <span class="pre">unexpected</span> <span class="pre">format.'</span></em><a class="headerlink" href="#mautic.exceptions.UnexpectedResponseFormatException.default_message" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.files">
+<span id="mautic-files-module"></span><h2>mautic.files module<a class="headerlink" href="#module-mautic.files" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.files.Files">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.files.</span></span><span class="sig-name descname"><span class="pre">Files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.files.Files" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.files.Files.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_if_not_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.files.Files.edit" title="Link to this definition">¶</a></dt>
+<dd><p>Edit an item with option to create if it doesn’t exist</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>create_if_not_exists</strong> – bool</p></li>
+<li><p><strong>parameters</strong> – dict</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.files.Files.set_folder">
+<span class="sig-name descname"><span class="pre">set_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'assets'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.files.Files.set_folder" title="Link to this definition">¶</a></dt>
+<dd><p>Changes the file folder to look at</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>folder</strong> – str [images, assets]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.forms">
+<span id="mautic-forms-module"></span><h2>mautic.forms module<a class="headerlink" href="#module-mautic.forms" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.forms.Forms">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.forms.</span></span><span class="sig-name descname"><span class="pre">Forms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.forms.Forms" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.forms.Forms.delete_actions">
+<span class="sig-name descname"><span class="pre">delete_actions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.forms.Forms.delete_actions" title="Link to this definition">¶</a></dt>
+<dd><p>Remove actions from a form</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>form_id</strong> – int</p></li>
+<li><p><strong>action_ids</strong> – list|tuple</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.forms.Forms.delete_fields">
+<span class="sig-name descname"><span class="pre">delete_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.forms.Forms.delete_fields" title="Link to this definition">¶</a></dt>
+<dd><p>Remove fields from a form</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>form_id</strong> – int</p></li>
+<li><p><strong>field_ids</strong> – list|tuple</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.notes">
+<span id="mautic-notes-module"></span><h2>mautic.notes module<a class="headerlink" href="#module-mautic.notes" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.notes.Notes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.notes.</span></span><span class="sig-name descname"><span class="pre">Notes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.notes.Notes" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.notifications">
+<span id="mautic-notifications-module"></span><h2>mautic.notifications module<a class="headerlink" href="#module-mautic.notifications" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.notifications.Notifications">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.notifications.</span></span><span class="sig-name descname"><span class="pre">Notifications</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.notifications.Notifications" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.pages">
+<span id="mautic-pages-module"></span><h2>mautic.pages module<a class="headerlink" href="#module-mautic.pages" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.pages.Pages">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.pages.</span></span><span class="sig-name descname"><span class="pre">Pages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.pages.Pages" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.point_triggers">
+<span id="mautic-point-triggers-module"></span><h2>mautic.point_triggers module<a class="headerlink" href="#module-mautic.point_triggers" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.point_triggers.PointTriggers">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.point_triggers.</span></span><span class="sig-name descname"><span class="pre">PointTriggers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.point_triggers.PointTriggers" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.point_triggers.PointTriggers.delete_trigger_events">
+<span class="sig-name descname"><span class="pre">delete_trigger_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trigger_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.point_triggers.PointTriggers.delete_trigger_events" title="Link to this definition">¶</a></dt>
+<dd><p>Remove events from a point trigger</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trigger_id</strong> – int</p></li>
+<li><p><strong>event_ids</strong> – list|tuple</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.points">
+<span id="mautic-points-module"></span><h2>mautic.points module<a class="headerlink" href="#module-mautic.points" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.points.Points">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.points.</span></span><span class="sig-name descname"><span class="pre">Points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.points.Points" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.points.Points.get_point_action_types">
+<span class="sig-name descname"><span class="pre">get_point_action_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mautic.points.Points.get_point_action_types" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.reports">
+<span id="mautic-reports-module"></span><h2>mautic.reports module<a class="headerlink" href="#module-mautic.reports" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.reports.Reports">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.reports.</span></span><span class="sig-name descname"><span class="pre">Reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.reports.Reports" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.reports.Reports.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.reports.Reports.create" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new item (if supported)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameters</strong> – dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.reports.Reports.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.reports.Reports.delete" title="Link to this definition">¶</a></dt>
+<dd><p>Delete an item</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – int</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.reports.Reports.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_if_not_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.reports.Reports.edit" title="Link to this definition">¶</a></dt>
+<dd><p>Edit an item with option to create if it doesn’t exist</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>create_if_not_exists</strong> – bool</p></li>
+<li><p><strong>parameters</strong> – dict</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.roles">
+<span id="mautic-roles-module"></span><h2>mautic.roles module<a class="headerlink" href="#module-mautic.roles" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.roles.Roles">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.roles.</span></span><span class="sig-name descname"><span class="pre">Roles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.roles.Roles" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.segments">
+<span id="mautic-segments-module"></span><h2>mautic.segments module<a class="headerlink" href="#module-mautic.segments" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.segments.Segments">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.segments.</span></span><span class="sig-name descname"><span class="pre">Segments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.segments.Segments" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.segments.Segments.add_contact">
+<span class="sig-name descname"><span class="pre">add_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segment_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.segments.Segments.add_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Add a contact to the segment</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segment_id</strong> – int Segment ID</p></li>
+<li><p><strong>contact_id</strong> – int Contact ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.segments.Segments.remove_contact">
+<span class="sig-name descname"><span class="pre">remove_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segment_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.segments.Segments.remove_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a contact from a segment</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segment_id</strong> – int Segment ID</p></li>
+<li><p><strong>contact_id</strong> – int Contact ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.smses">
+<span id="mautic-smses-module"></span><h2>mautic.smses module<a class="headerlink" href="#module-mautic.smses" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.smses.Smses">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.smses.</span></span><span class="sig-name descname"><span class="pre">Smses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.smses.Smses" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-mautic.stages">
+<span id="mautic-stages-module"></span><h2>mautic.stages module<a class="headerlink" href="#module-mautic.stages" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.stages.Stages">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.stages.</span></span><span class="sig-name descname"><span class="pre">Stages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stages.Stages" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.stages.Stages.add_contact">
+<span class="sig-name descname"><span class="pre">add_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stages.Stages.add_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Add a contact to the stage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int Stage ID</p></li>
+<li><p><strong>contact_id</strong> – int Contact ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.stages.Stages.remove_contact">
+<span class="sig-name descname"><span class="pre">remove_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stages.Stages.remove_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a contact from the stage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int Stage ID</p></li>
+<li><p><strong>contact_id</strong> – int Contact ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.stats">
+<span id="mautic-stats-module"></span><h2>mautic.stats module<a class="headerlink" href="#module-mautic.stats" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.stats.Stats">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.stats.</span></span><span class="sig-name descname"><span class="pre">Stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stats.Stats" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.stats.Stats.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stats.Stats.create" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new item (if supported)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameters</strong> – dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.stats.Stats.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stats.Stats.delete" title="Link to this definition">¶</a></dt>
+<dd><p>Delete an item</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> – int</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.stats.Stats.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_if_not_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stats.Stats.edit" title="Link to this definition">¶</a></dt>
+<dd><p>Edit an item with option to create if it doesn’t exist</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>create_if_not_exists</strong> – bool</p></li>
+<li><p><strong>parameters</strong> – dict</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.stats.Stats.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stats.Stats.get" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of stat items</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> – str database table name</p></li>
+<li><p><strong>start</strong> – int</p></li>
+<li><p><strong>limit</strong> – int</p></li>
+<li><p><strong>order</strong> – list|tuple</p></li>
+<li><p><strong>where</strong> – list|tuple</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.stats.Stats.get_list">
+<span class="sig-name descname"><span class="pre">get_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">published_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stats.Stats.get_list" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of items</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search</strong> – str</p></li>
+<li><p><strong>start</strong> – int</p></li>
+<li><p><strong>limit</strong> – int</p></li>
+<li><p><strong>order_by</strong> – str</p></li>
+<li><p><strong>order_by_dir</strong> – str</p></li>
+<li><p><strong>published_only</strong> – bool</p></li>
+<li><p><strong>minimal</strong> – bool</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.stats.Stats.get_published_list">
+<span class="sig-name descname"><span class="pre">get_published_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ASC'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.stats.Stats.get_published_list" title="Link to this definition">¶</a></dt>
+<dd><p>Proxy function to get_list with published_only set to True
+:param search: str
+:param start: int
+:param limit: int
+:param order_by: str
+:param order_by_dir: str
+:return: dict|str</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.users">
+<span id="mautic-users-module"></span><h2>mautic.users module<a class="headerlink" href="#module-mautic.users" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mautic.users.Users">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mautic.users.</span></span><span class="sig-name descname"><span class="pre">Users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.users.Users" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mautic.api.API" title="mautic.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.users.Users.check_permission">
+<span class="sig-name descname"><span class="pre">check_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permissions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.users.Users.check_permission" title="Link to this definition">¶</a></dt>
+<dd><p>Get list of permissions for a user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_id</strong> – int</p></li>
+<li><p><strong>permissions</strong> – str|list|tuple</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mautic.users.Users.get_self">
+<span class="sig-name descname"><span class="pre">get_self</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mautic.users.Users.get_self" title="Link to this definition">¶</a></dt>
+<dd><p>Get your (API) user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict|str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mautic.utils">
+<span id="mautic-utils-module"></span><h2>mautic.utils module<a class="headerlink" href="#module-mautic.utils" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mautic.utils.read_token_tempfile">
+<span class="sig-prename descclassname"><span class="pre">mautic.utils.</span></span><span class="sig-name descname"><span class="pre">read_token_tempfile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mautic.utils.read_token_tempfile" title="Link to this definition">¶</a></dt>
+<dd><p>Example of function for getting stored token
+:return: token dict</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mautic.utils.update_token_tempfile">
+<span class="sig-prename descclassname"><span class="pre">mautic.utils.</span></span><span class="sig-name descname"><span class="pre">update_token_tempfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mautic.utils.update_token_tempfile" title="Link to this definition">¶</a></dt>
+<dd><p>Example of function for token update</p>
+</dd></dl>
+
+</section>
+<section id="module-mautic">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mautic" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Python Mautic Library</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Divio, Khoramism.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../_sources/docs/source/mautic.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

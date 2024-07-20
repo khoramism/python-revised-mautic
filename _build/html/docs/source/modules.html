@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mautic &#8212; Python Mautic Library  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mautic">
+<h1>mautic<a class="headerlink" href="#mautic" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mautic.html">mautic package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.api">mautic.api module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.api.API"><code class="docutils literal notranslate"><span class="pre">API</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.api.API.action_not_supported"><code class="docutils literal notranslate"><span class="pre">API.action_not_supported()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.api.API.create"><code class="docutils literal notranslate"><span class="pre">API.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.api.API.delete"><code class="docutils literal notranslate"><span class="pre">API.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.api.API.edit"><code class="docutils literal notranslate"><span class="pre">API.edit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.api.API.get"><code class="docutils literal notranslate"><span class="pre">API.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.api.API.get_list"><code class="docutils literal notranslate"><span class="pre">API.get_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.api.API.get_published_list"><code class="docutils literal notranslate"><span class="pre">API.get_published_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.api.API.process_response"><code class="docutils literal notranslate"><span class="pre">API.process_response()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.api.MauticBasicAuthClient"><code class="docutils literal notranslate"><span class="pre">MauticBasicAuthClient</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.api.MauticOauth2Client"><code class="docutils literal notranslate"><span class="pre">MauticOauth2Client</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.assets">mautic.assets module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.assets.Assets"><code class="docutils literal notranslate"><span class="pre">Assets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.campaigns">mautic.campaigns module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.campaigns.Campaigns"><code class="docutils literal notranslate"><span class="pre">Campaigns</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.campaigns.Campaigns.add_contact"><code class="docutils literal notranslate"><span class="pre">Campaigns.add_contact()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.campaigns.Campaigns.remove_contact"><code class="docutils literal notranslate"><span class="pre">Campaigns.remove_contact()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.categories">mautic.categories module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.categories.Categories"><code class="docutils literal notranslate"><span class="pre">Categories</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.companies">mautic.companies module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.companies.Companies"><code class="docutils literal notranslate"><span class="pre">Companies</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.companies.Companies.add_contact"><code class="docutils literal notranslate"><span class="pre">Companies.add_contact()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.companies.Companies.remove_contact"><code class="docutils literal notranslate"><span class="pre">Companies.remove_contact()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.company_fields">mautic.company_fields module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.company_fields.CompanyFields"><code class="docutils literal notranslate"><span class="pre">CompanyFields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.contact_fields">mautic.contact_fields module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.contact_fields.ContactFields"><code class="docutils literal notranslate"><span class="pre">ContactFields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.contacts">mautic.contacts module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts"><code class="docutils literal notranslate"><span class="pre">Contacts</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.BOUNCED"><code class="docutils literal notranslate"><span class="pre">Contacts.BOUNCED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.MANUAL"><code class="docutils literal notranslate"><span class="pre">Contacts.MANUAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.UNSUBSCRIBED"><code class="docutils literal notranslate"><span class="pre">Contacts.UNSUBSCRIBED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.add_dnc"><code class="docutils literal notranslate"><span class="pre">Contacts.add_dnc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.add_points"><code class="docutils literal notranslate"><span class="pre">Contacts.add_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.create_contact"><code class="docutils literal notranslate"><span class="pre">Contacts.create_contact()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.get_contact_campaigns"><code class="docutils literal notranslate"><span class="pre">Contacts.get_contact_campaigns()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.get_contact_notes"><code class="docutils literal notranslate"><span class="pre">Contacts.get_contact_notes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.get_contact_segments"><code class="docutils literal notranslate"><span class="pre">Contacts.get_contact_segments()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.get_events"><code class="docutils literal notranslate"><span class="pre">Contacts.get_events()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.get_field_list"><code class="docutils literal notranslate"><span class="pre">Contacts.get_field_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.get_owners"><code class="docutils literal notranslate"><span class="pre">Contacts.get_owners()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.get_segments"><code class="docutils literal notranslate"><span class="pre">Contacts.get_segments()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.remove_dnc"><code class="docutils literal notranslate"><span class="pre">Contacts.remove_dnc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.contacts.Contacts.subtract_points"><code class="docutils literal notranslate"><span class="pre">Contacts.subtract_points()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.data">mautic.data module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.data.Data"><code class="docutils literal notranslate"><span class="pre">Data</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.data.Data.get"><code class="docutils literal notranslate"><span class="pre">Data.get()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.dynamic_contents">mautic.dynamic_contents module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.dynamic_contents.DynamicContents"><code class="docutils literal notranslate"><span class="pre">DynamicContents</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.emails">mautic.emails module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.emails.Emails"><code class="docutils literal notranslate"><span class="pre">Emails</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.emails.Emails.create_email"><code class="docutils literal notranslate"><span class="pre">Emails.create_email()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.emails.Emails.get_email"><code class="docutils literal notranslate"><span class="pre">Emails.get_email()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.emails.Emails.send"><code class="docutils literal notranslate"><span class="pre">Emails.send()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.emails.Emails.send_to_contact"><code class="docutils literal notranslate"><span class="pre">Emails.send_to_contact()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.exceptions">mautic.exceptions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.exceptions.ActionNotSupportedException"><code class="docutils literal notranslate"><span class="pre">ActionNotSupportedException</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.exceptions.ActionNotSupportedException.default_message"><code class="docutils literal notranslate"><span class="pre">ActionNotSupportedException.default_message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.exceptions.ContextNotFoundException"><code class="docutils literal notranslate"><span class="pre">ContextNotFoundException</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.exceptions.ContextNotFoundException.default_message"><code class="docutils literal notranslate"><span class="pre">ContextNotFoundException.default_message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.exceptions.IncorrectParametersReturnedException"><code class="docutils literal notranslate"><span class="pre">IncorrectParametersReturnedException</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.exceptions.IncorrectParametersReturnedException.default_message"><code class="docutils literal notranslate"><span class="pre">IncorrectParametersReturnedException.default_message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.exceptions.MauticException"><code class="docutils literal notranslate"><span class="pre">MauticException</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.exceptions.MauticException.code"><code class="docutils literal notranslate"><span class="pre">MauticException.code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.exceptions.MauticException.default_message"><code class="docutils literal notranslate"><span class="pre">MauticException.default_message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.exceptions.UnexpectedResponseFormatException"><code class="docutils literal notranslate"><span class="pre">UnexpectedResponseFormatException</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.exceptions.UnexpectedResponseFormatException.default_message"><code class="docutils literal notranslate"><span class="pre">UnexpectedResponseFormatException.default_message</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.files">mautic.files module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.files.Files"><code class="docutils literal notranslate"><span class="pre">Files</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.files.Files.edit"><code class="docutils literal notranslate"><span class="pre">Files.edit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.files.Files.set_folder"><code class="docutils literal notranslate"><span class="pre">Files.set_folder()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.forms">mautic.forms module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.forms.Forms"><code class="docutils literal notranslate"><span class="pre">Forms</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.forms.Forms.delete_actions"><code class="docutils literal notranslate"><span class="pre">Forms.delete_actions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.forms.Forms.delete_fields"><code class="docutils literal notranslate"><span class="pre">Forms.delete_fields()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.notes">mautic.notes module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.notes.Notes"><code class="docutils literal notranslate"><span class="pre">Notes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.notifications">mautic.notifications module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.notifications.Notifications"><code class="docutils literal notranslate"><span class="pre">Notifications</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.pages">mautic.pages module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.pages.Pages"><code class="docutils literal notranslate"><span class="pre">Pages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.point_triggers">mautic.point_triggers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.point_triggers.PointTriggers"><code class="docutils literal notranslate"><span class="pre">PointTriggers</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.point_triggers.PointTriggers.delete_trigger_events"><code class="docutils literal notranslate"><span class="pre">PointTriggers.delete_trigger_events()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.points">mautic.points module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.points.Points"><code class="docutils literal notranslate"><span class="pre">Points</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.points.Points.get_point_action_types"><code class="docutils literal notranslate"><span class="pre">Points.get_point_action_types()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.reports">mautic.reports module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.reports.Reports"><code class="docutils literal notranslate"><span class="pre">Reports</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.reports.Reports.create"><code class="docutils literal notranslate"><span class="pre">Reports.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.reports.Reports.delete"><code class="docutils literal notranslate"><span class="pre">Reports.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.reports.Reports.edit"><code class="docutils literal notranslate"><span class="pre">Reports.edit()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.roles">mautic.roles module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.roles.Roles"><code class="docutils literal notranslate"><span class="pre">Roles</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.segments">mautic.segments module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.segments.Segments"><code class="docutils literal notranslate"><span class="pre">Segments</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.segments.Segments.add_contact"><code class="docutils literal notranslate"><span class="pre">Segments.add_contact()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.segments.Segments.remove_contact"><code class="docutils literal notranslate"><span class="pre">Segments.remove_contact()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.smses">mautic.smses module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.smses.Smses"><code class="docutils literal notranslate"><span class="pre">Smses</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.stages">mautic.stages module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.stages.Stages"><code class="docutils literal notranslate"><span class="pre">Stages</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.stages.Stages.add_contact"><code class="docutils literal notranslate"><span class="pre">Stages.add_contact()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.stages.Stages.remove_contact"><code class="docutils literal notranslate"><span class="pre">Stages.remove_contact()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.stats">mautic.stats module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.stats.Stats"><code class="docutils literal notranslate"><span class="pre">Stats</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.stats.Stats.create"><code class="docutils literal notranslate"><span class="pre">Stats.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.stats.Stats.delete"><code class="docutils literal notranslate"><span class="pre">Stats.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.stats.Stats.edit"><code class="docutils literal notranslate"><span class="pre">Stats.edit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.stats.Stats.get"><code class="docutils literal notranslate"><span class="pre">Stats.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.stats.Stats.get_list"><code class="docutils literal notranslate"><span class="pre">Stats.get_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.stats.Stats.get_published_list"><code class="docutils literal notranslate"><span class="pre">Stats.get_published_list()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.users">mautic.users module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.users.Users"><code class="docutils literal notranslate"><span class="pre">Users</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.users.Users.check_permission"><code class="docutils literal notranslate"><span class="pre">Users.check_permission()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mautic.html#mautic.users.Users.get_self"><code class="docutils literal notranslate"><span class="pre">Users.get_self()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic.utils">mautic.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.utils.read_token_tempfile"><code class="docutils literal notranslate"><span class="pre">read_token_tempfile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mautic.html#mautic.utils.update_token_tempfile"><code class="docutils literal notranslate"><span class="pre">update_token_tempfile()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mautic.html#module-mautic">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Python Mautic Library</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Divio, Khoramism.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../_sources/docs/source/modules.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

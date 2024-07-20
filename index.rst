@@ -1,9 +1,9 @@
-.. python-revised-mautic documentation master file, created by
-   sphinx-quickstart on Sat Jul 20 05:28:06 2024.
+.. Python Mautic Library documentation master file, created by
+   sphinx-quickstart on Sat Jul 20 06:16:15 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-python-revised-mautic documentation
+Python Mautic Library documentation
 ===================================
 
 Add your content using ``reStructuredText`` syntax. See the

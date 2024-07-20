@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'python-revised-mautic'
-copyright = '2024, Alireza Khorami'
-author = 'Alireza Khorami'
+project = 'Python Mautic Library'
+copyright = '2024, Divio, Khoramism'
+author = 'Divio, Khoramism'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -16,7 +16,7 @@ author = 'Alireza Khorami'
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 
 templates_path = ['_templates']
-exclude_patterns = []
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
 

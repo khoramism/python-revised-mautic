@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Mautic Python &#8212; Python Mautic Library  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mautic-python">
+<h1>Mautic Python<a class="headerlink" href="#mautic-python" title="Link to this heading">¶</a></h1>
+<p>A Python wrapper for the Mautic API utilizing <a class="reference external" href="https://github.com/requests/requests-oauthlib">requests-oauthlib</a>.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<p>To install this package, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/khoramism/python-revised-mautic.git
+</pre></div>
+</div>
+</section>
+<section id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Enter your Mautic API credentials in <code class="docutils literal notranslate"><span class="pre">apitester/oauth2_app.py</span></code>.</p></li>
+<li><p>Run the Flask app to obtain an OAuth2 token:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>apitester/oauth2_app.py
+</pre></div>
+</div>
+<p>This will generate a <code class="docutils literal notranslate"><span class="pre">creds.json</span></code> file in a temporary directory, allowing you to start using the Mautic API.</p>
+</li>
+</ol>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
+<p>To interact with the Mautic API:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">python_mautic</span> <span class="kn">import</span> <span class="n">MauticOauth2Client</span><span class="p">,</span> <span class="n">Contacts</span>
+<span class="kn">from</span> <span class="nn">python_mautic.utils</span> <span class="kn">import</span> <span class="n">read_token_tempfile</span>
+
+<span class="c1"># Load the OAuth2 token</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">read_token_tempfile</span><span class="p">()</span>
+
+<span class="c1"># Initialize the Mautic client</span>
+<span class="n">mautic</span> <span class="o">=</span> <span class="n">MauticOauth2Client</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s1">&#39;&lt;base URL&gt;&#39;</span><span class="p">,</span> <span class="n">client_id</span><span class="o">=</span><span class="s1">&#39;&lt;Mautic Public Key&gt;&#39;</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+<span class="c1"># Create a Contacts instance</span>
+<span class="n">contacts</span> <span class="o">=</span> <span class="n">Contacts</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="n">mautic</span><span class="p">)</span>
+
+<span class="c1"># Fetch and print the list of contacts</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contacts</span><span class="o">.</span><span class="n">get_list</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="example-working-with-contacts-and-segments">
+<h2>Example: Working with Contacts and Segments<a class="headerlink" href="#example-working-with-contacts-and-segments" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mautic</span> <span class="kn">import</span> <span class="n">MauticOauth2Client</span><span class="p">,</span> <span class="n">Contacts</span><span class="p">,</span> <span class="n">Segments</span>
+<span class="kn">from</span> <span class="nn">mautic.utils</span> <span class="kn">import</span> <span class="n">read_token_tempfile</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">client_id</span> <span class="o">=</span> <span class="s1">&#39;CLIENT_ID&#39;</span>
+<span class="n">client_secret</span> <span class="o">=</span> <span class="s1">&#39;CLIENT_SECRET&#39;</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://mautic.example.com&#39;</span>
+
+<span class="c1"># Load the OAuth2 token</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">read_token_tempfile</span><span class="p">()</span>
+
+<span class="c1"># Initialize the Mautic client</span>
+<span class="n">mautic</span> <span class="o">=</span> <span class="n">MauticOauth2Client</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">,</span> <span class="n">client_id</span><span class="o">=</span><span class="n">client_id</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+<span class="n">contacts</span> <span class="o">=</span> <span class="n">Contacts</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="n">mautic</span><span class="p">)</span>
+<span class="n">segments</span> <span class="o">=</span> <span class="n">Segments</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="n">mautic</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_segment_id</span><span class="p">(</span><span class="n">segment_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieves the ID for a given segment by name.</span>
+
+<span class="sd">    :param segment_name: The name of the segment.</span>
+<span class="sd">    :return: The ID of the segment.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">all_segments</span> <span class="o">=</span> <span class="n">segments</span><span class="o">.</span><span class="n">get_list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">all_segments</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">segment</span><span class="p">[</span><span class="s1">&#39;alias&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">segment_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">segment</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">contact_id_in_segment</span><span class="p">(</span><span class="n">segment</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieves all contact IDs within a specified segment.</span>
+
+<span class="sd">    :param segment: The segment name.</span>
+<span class="sd">    :return: A tuple containing a list of contact IDs and the total count.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">all_contacts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">contacts</span><span class="o">.</span><span class="n">get_list</span><span class="p">(</span><span class="n">search</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;segment:</span><span class="si">{</span><span class="n">segment</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+        <span class="n">batch_contacts</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;contacts&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">batch_contacts</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">all_contacts</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">batch_contacts</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">start</span> <span class="o">+=</span> <span class="n">batch_size</span>
+    <span class="k">return</span> <span class="n">all_contacts</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_contacts</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">remove_contact_from_segment</span><span class="p">(</span><span class="n">client_ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">segment_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Removes specified contacts from a segment.</span>
+
+<span class="sd">    :param client_ids: List of contact IDs to remove.</span>
+<span class="sd">    :param segment_id: The segment ID.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">client_id</span> <span class="ow">in</span> <span class="n">client_ids</span><span class="p">:</span>
+        <span class="n">segments</span><span class="o">.</span><span class="n">remove_contact</span><span class="p">(</span><span class="n">segment_id</span><span class="p">,</span> <span class="n">client_id</span><span class="p">)</span>
+
+    <span class="c1"># Optional: Verify removal and attempt again if necessary.</span>
+    <span class="n">all_client_ids</span><span class="p">,</span> <span class="n">total</span> <span class="o">=</span> <span class="n">contact_id_in_segment</span><span class="p">(</span><span class="n">segment_id</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">total</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">remove_contact_from_segment</span><span class="p">(</span><span class="n">all_client_ids</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">segment_id</span><span class="o">=</span><span class="n">segment_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Python Mautic Library</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Divio, Khoramism.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/README.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
